@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.penck.bluetooth.R;
-import com.penck.bluetooth.classic.BluetoothManager;
+import com.penck.bluetooth.classic.BltManager;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,7 +19,7 @@ import com.penck.bluetooth.classic.BluetoothManager;
 public class ClassicClientFragment extends BaseFragment implements View.OnClickListener {
     private TextView infoView, receiveView;
     private TextView deviceView;
-    private BluetoothManager bluetoothManager;
+    private BltManager bluetoothManager;
     private BluetoothDevice device;
 
     @Override
@@ -37,8 +37,8 @@ public class ClassicClientFragment extends BaseFragment implements View.OnClickL
         view.findViewById(R.id.scan).setOnClickListener(this);
         view.findViewById(R.id.connect).setOnClickListener(this);
 
-        bluetoothManager = new BluetoothManager(getContext());
-        bluetoothManager.setBluetoothCallback(new BluetoothManager.BluetoothCallback() {
+        bluetoothManager = new BltManager(getContext());
+        bluetoothManager.setBluetoothCallback(new BltManager.BluetoothCallback() {
             @Override
             public void onSend(String info) {
                 infoView.append(info + "\n");

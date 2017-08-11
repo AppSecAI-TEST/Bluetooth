@@ -9,8 +9,10 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.penck.bluetooth.R;
-import com.penck.bluetooth.classic.BluetoothManager;
+import com.penck.bluetooth.classic.BltManager;
 import com.penck.bluetooth.ui.fragment.BaseFragment;
+import com.penck.bluetooth.ui.fragment.BleClientFragment;
+import com.penck.bluetooth.ui.fragment.BleServerFragment;
 import com.penck.bluetooth.ui.fragment.ClassicClientFragment;
 import com.penck.bluetooth.ui.fragment.ClassicServerFragment;
 
@@ -50,16 +52,24 @@ public class ClassicActivity extends AppCompatActivity {
                 if (checkBluetooth())
                     showFragment(new ClassicClientFragment());
                 break;
+            case R.id.ble_client:
+                if (checkBluetooth())
+                    showFragment(new BleClientFragment());
+                break;
+            case R.id.ble_server:
+                if (checkBluetooth())
+                    showFragment(new BleServerFragment());
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
 
     private boolean checkBluetooth() {
-        if (!BluetoothManager.isSupport()) {
+        if (!BltManager.isSupport()) {
             Toast.makeText(this, "is not support", Toast.LENGTH_LONG).show();
             return false;
         }
-        if (!BluetoothManager.isEnabled()) {
+        if (!BltManager.isEnabled()) {
             Toast.makeText(this, "is not open", Toast.LENGTH_LONG).show();
             return false;
         }

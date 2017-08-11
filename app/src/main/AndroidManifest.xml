@@ -4,7 +4,10 @@
     <!--classic bluetooth-->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-
+    <!--ble-->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"

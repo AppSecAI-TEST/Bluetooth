@@ -23,9 +23,10 @@ import java.util.UUID;
 
 /**
  * Created by peng on 2017/8/10.
+ * classic Bluetooth manager
  */
 
-public class BluetoothManager {
+public class BltManager {
     private static final String NAME = "blue-tooth";
     private final java.util.UUID uuid = UUID.fromString("4cdbc040-657a-4847-b266-7e31d9e2c3d9");
     private Context context;
@@ -33,7 +34,7 @@ public class BluetoothManager {
     private ServerThread serverThread;
     private ClientThread clientThread;
 
-    public BluetoothManager(Context context) {
+    public BltManager(Context context) {
         this.context = context;
     }
 

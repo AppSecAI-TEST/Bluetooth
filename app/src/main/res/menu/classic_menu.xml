@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-   
+
     <item
         android:id="@+id/as_server"
         android:orderInCategory="100"
@@ -11,5 +11,15 @@
         android:id="@+id/as_client"
         android:orderInCategory="101"
         android:title="AS_Client"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/ble_client"
+        android:orderInCategory="102"
+        android:title="BLE_Client"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/ble_server"
+        android:orderInCategory="103"
+        android:title="BLE_Server"
         app:showAsAction="never" />
 </menu>
